@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Syne", sans-serif;
+  --font-sans: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --color-ink: #0a0f1c;
+  --color-ink-soft: #1a2236;
+  --color-muted: #5a6578;
+  --color-line: #d4dae6;
+  --color-surface: #f4f6fa;
+  --color-paper: #eef1f7;
+  --color-accent: #00b4a6;
+  --color-accent-deep: #008f84;
+  --color-accent-soft: #d5f5f1;
+  --color-warm: #e8a54b;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background-color: var(--color-surface);
+    background-image:
+      radial-gradient(ellipse 80% 50% at 10% -10%, rgba(0, 180, 166, 0.12), transparent 50%),
+      radial-gradient(ellipse 60% 40% at 90% 10%, rgba(232, 165, 75, 0.08), transparent 45%),
+      linear-gradient(180deg, #f7f8fc 0%, var(--color-surface) 40%, #e8ecf4 100%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-ink);
+  }
+}
+
+@layer utilities {
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgba(10, 15, 28, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(10, 15, 28, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .dot-bg {
+    background-image: radial-gradient(rgba(10, 15, 28, 0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
