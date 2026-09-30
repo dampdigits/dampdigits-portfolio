@@ -4,67 +4,69 @@ import { Section } from "./Section"
 
 export function Projects() {
   return (
-    <Section id="projects" eyebrow="03 / Projects" title="Personal builds">
-      <div className="grid gap-6 sm:grid-cols-2">
+    <Section id="projects" prompt="ls ~/projects" title="Personal projects">
+      <div className="grid gap-3 sm:grid-cols-2">
         {projects.map((project, index) => (
           <motion.article
             key={project.name}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.45, delay: index * 0.06 }}
-            className="group flex flex-col border border-line bg-paper/50 p-6 transition-colors hover:border-ink/40 md:p-8"
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.4, delay: index * 0.05 }}
+            className="group flex overflow-hidden border border-line bg-panel transition-colors hover:border-accent/40"
           >
-            <div className="mb-1 flex items-start justify-between gap-3">
-              <h3 className="font-display text-xl font-bold text-ink">
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-accent-deep"
-                >
-                  {project.name}
-                </a>
-              </h3>
-              <span
-                className="font-mono text-accent transition-transform group-hover:translate-x-0.5"
-                aria-hidden
-              >
-                ↗
-              </span>
-            </div>
-
-            <ul className="mt-4 flex-1 space-y-2">
-              {project.points.map((point) => (
-                <li key={point} className="text-sm leading-relaxed text-muted">
-                  {point}
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-6 flex flex-wrap gap-1.5 border-t border-line pt-4">
-              {project.stack.slice(0, 5).map((tech) => (
-                <span
-                  key={tech}
-                  className="font-mono text-[10px] tracking-wide text-muted uppercase"
-                >
-                  {tech}
+            {project.image ? (
+              <div className="relative hidden w-28 shrink-0 overflow-hidden sm:block md:w-36">
+                <img
+                  src={project.image}
+                  alt=""
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-void/30" />
+              </div>
+            ) : (
+              <div className="hidden w-28 shrink-0 items-center justify-center border-r border-line bg-panel-2 font-mono text-[10px] text-accent-dim sm:flex md:w-36">
+                {"</>"}
+              </div>
+            )}
+            <div className="flex flex-1 flex-col p-3.5 sm:p-4">
+              <div className="flex items-start justify-between gap-2">
+                <h3 className="font-display text-base font-bold text-white">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-accent"
+                  >
+                    {project.name}
+                  </a>
+                </h3>
+                <span className="font-mono text-xs text-accent" aria-hidden>
+                  ↗
                 </span>
-              ))}
-            </div>
-
-            <div className="mt-3 flex flex-wrap gap-3">
-              {project.repos.map((repo) => (
-                <a
-                  key={repo.href}
-                  href={repo.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-xs text-accent-deep underline-offset-2 hover:underline"
-                >
-                  {repo.label}
-                </a>
-              ))}
+              </div>
+              <p className="mt-1.5 text-[13px] leading-snug text-muted">{project.blurb}</p>
+              <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1">
+                {project.stack.slice(0, 4).map((t) => (
+                  <span key={t} className="font-mono text-[9px] text-accent-dim uppercase">
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-2 flex gap-3">
+                {project.repos.map((r) => (
+                  <a
+                    key={r.href}
+                    href={r.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-[10px] text-soft hover:text-accent"
+                  >
+                    {r.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </motion.article>
         ))}

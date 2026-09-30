@@ -1,7 +1,26 @@
+import adaquaThumb from "../assets/projects/adaqua-thumbnail.webp"
+import caregrowThumb from "../assets/projects/caregrow-thumbnail.webp"
+import desiThumb from "../assets/projects/desielegance-thumbnail.webp"
+import anpThumb from "../assets/projects/anp-thumbnail.webp"
+import curatorsThumb from "../assets/projects/curators-mark.webp"
+import atomcareThumb from "../assets/projects/atomcare-thumbnail.webp"
+import bingeThumb from "../assets/projects/binge-watch.webp"
+
+import ayman from "../assets/clients/ayman-tailakh.webp"
+import mdadil from "../assets/clients/mdadil.webp"
+import pranay from "../assets/clients/pranaychhibber.webp"
+import sakia from "../assets/clients/sakia-jamal.webp"
+
+import bluster2025 from "../assets/achievements/bluster2025.jpeg"
+import bluster2024 from "../assets/achievements/bluster2024.webp"
+import codingStill from "../assets/achievements/coding-still-pic.webp"
+import devInnov8 from "../assets/achievements/dev-innov8.jpeg"
+import yuktikala from "../assets/achievements/yuktikala2024.webp"
+
 export const profile = {
   name: "SK Sameer Salam",
   brand: "dampdigits",
-  title: "Full Stack Developer & UI/UX Designer",
+  title: "Full Stack Developer · UI/UX Designer",
   location: "Kolkata, India",
   phone: "+91 82729 27693",
   phoneHref: "tel:+918272927693",
@@ -9,34 +28,27 @@ export const profile = {
   emailHref: "mailto:sksameersalam@gmail.com",
   website: "https://dampdigits.dev/",
   tagline:
-    "I design and ship production web products — from CRM dashboards to PWAs — that businesses can hire me to build.",
+    "I ship production web products for businesses — CRMs, PWAs, storefronts, and analytics — end to end.",
   summary:
-    "Full stack developer, UI/UX designer, and competitive programmer. I blend clean engineering with purposeful design to deliver end-to-end products that solve real business problems.",
+    "Freelance software engineer & UI/UX designer. Blend of clean engineering, purposeful design, and competitive-programming rigor.",
   links: [
     { label: "GitHub", href: "https://github.com/dampdigits" },
     { label: "GitLab", href: "https://gitlab.com/dampdigits" },
     { label: "LinkedIn", href: "https://linkedin.com/in/dampdigits" },
     { label: "LeetCode", href: "https://leetcode.com/u/dampdigits" },
   ],
-  about: [
-    "Builds complete web applications that function seamlessly and look intentional.",
-    "Designs UI/UX in Figma and has a background in digital art and comics.",
-    "Competitive programmer — DSA daily, with wins in hackathons and CP tournaments.",
-    "GNU/Linux enthusiast and open-source advocate.",
-    "Former Marketing Lead of GDSC Brainware University.",
-    "Exploring AI/ML while tutoring computer science part-time.",
-  ],
-  roles: [
-    "Full Stack Developer",
-    "UI/UX Designer",
-    "Competitive Programmer",
-    "Freelance Engineer",
-  ],
 }
+
+export const highlights = [
+  { label: "LeetCode", value: "600+" },
+  { label: "Contest", value: "1578" },
+  { label: "Streak", value: "275d" },
+  { label: "Freelance", value: "Dec'24+" },
+]
 
 export const skills = {
   languages: ["Python", "TypeScript", "JavaScript", "Java", "C", "C++", "Lua", "Nix", "Bash"],
-  frameworks: ["Django & DRF", "Flask", "Next.js & React", "Tailwind CSS", "Bootstrap"],
+  frameworks: ["Django & DRF", "Flask", "Next.js", "React", "Tailwind CSS", "Bootstrap"],
   databases: ["PostgreSQL", "MongoDB", "MySQL", "SQLite"],
   patterns: ["MVT", "MVC", "REST", "SOLID"],
   tools: [
@@ -51,38 +63,10 @@ export const skills = {
     "SQLAlchemy",
     "Postman",
     "Figma",
-    "HTML",
-    "Jinja",
-    "CSS",
+    "Prisma",
+    "Stripe",
+    "Sanity",
   ],
-}
-
-export const education = [
-  {
-    title: "B.Tech in Computer Science & Engineering",
-    detail: "CGPA 8.11",
-    place: "Brainware University, Kolkata",
-    period: "2022 – 2026",
-  },
-  {
-    title: "12th Standard (ISC)",
-    detail: "93%",
-    place: "Young Horizons School, Kolkata",
-    period: "2021",
-  },
-  {
-    title: "10th Standard (ICSE)",
-    detail: "93%",
-    place: "Young Horizons School, Kolkata",
-    period: "2019",
-  },
-]
-
-export type ExperienceClient = {
-  name: string
-  url?: string
-  stack: string[]
-  points: string[]
 }
 
 export const experience = {
@@ -95,181 +79,227 @@ export const experience = {
     {
       name: "Ad-Aqua",
       url: "https://analytics.adaqua.co.in/analytics-demo",
-      stack: [
-        "MongoDB",
-        "TanStack Query",
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Prisma",
-        "Figma",
-        "Tailwind CSS",
-      ],
-      points: [
-        "Engineered dynamic QR code generation with consumer data tracking before redirection to client ads.",
-        "Built an analytics dashboard with charts and metrics to deliver consumer insights to clients.",
-      ],
+      image: adaquaThumb,
+      stack: ["Next.js", "TypeScript", "MongoDB", "Prisma", "TanStack Query", "Tailwind"],
+      blurb:
+        "Dynamic QR generation with consumer tracking and an analytics dashboard for client insights.",
     },
     {
       name: "CareGrow",
       url: "https://www.caregrow.org",
-      stack: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Sanity",
-        "Tailwind CSS",
-        "Figma",
-        "Drizzle",
-        "Stripe",
-        "Cloudflare R2",
-        "PostgreSQL",
-      ],
-      points: [
-        "Built a CRM integrated with existing workflows to manage applications and donations, plus a Sanity-powered blog and CMS.",
-        "Integrated Stripe for secure donations and shipped a responsive PWA with automated email receipts.",
-      ],
+      image: caregrowThumb,
+      stack: ["Next.js", "Sanity", "Stripe", "PostgreSQL", "Drizzle", "Cloudflare R2"],
+      blurb:
+        "CRM for applications & donations, Sanity CMS/blog, Stripe donations, and a responsive PWA.",
     },
     {
       name: "Desi Elegance",
       url: "https://www.desielegance.in",
-      stack: ["Next.js", "React", "TypeScript", "CSS", "Figma", "Canva", "Vercel"],
-      points: [
-        "Redesigned the storefront with a mobile-first UI, optimised imagery to cut load time by ~90%, and added CTAs for product discovery.",
-        "Integrated Vercel Analytics & Speed Insights and improved SEO via structured metadata and sitemap.",
-      ],
+      image: desiThumb,
+      stack: ["Next.js", "TypeScript", "Figma", "Vercel"],
+      blurb:
+        "Mobile-first redesign; ~90% faster imagery; SEO + Vercel Analytics & Speed Insights.",
     },
     {
-      name: "Other client work",
-      urls: [
-        { label: "anpfaculty.com", href: "https://anpfaculty.com" },
-        { label: "curatorsmark.com", href: "https://curatorsmark.com" },
-        { label: "atomcare.life", href: "https://atomcare.life" },
-      ],
-      stack: ["Next.js", "React", "TypeScript", "Figma", "Tailwind", "Vercel", "Redis"],
-      points: [
-        "Delivered client projects end-to-end — requirements, UI/UX, development, testing, deployment, and maintenance.",
-        "Shipped portfolio sites with application workflows, SMTP automation, rate-limiting, and production infrastructure.",
-      ],
+      name: "ANP Faculty",
+      url: "https://anpfaculty.com",
+      image: anpThumb,
+      stack: ["Next.js", "React", "Tailwind", "Vercel"],
+      blurb: "End-to-end client site with workflows, SMTP automation, and production infra.",
     },
-  ] as Array<
-    ExperienceClient & {
-      urls?: { label: string; href: string }[]
-    }
-  >,
+    {
+      name: "Curators Mark",
+      url: "https://curatorsmark.com",
+      image: curatorsThumb,
+      stack: ["Next.js", "TypeScript", "Figma", "Redis"],
+      blurb: "Agency presence with application flows, rate-limiting, and deployment ops.",
+    },
+    {
+      name: "AtomCare",
+      url: "https://atomcare.life",
+      image: atomcareThumb,
+      stack: ["Next.js", "React", "Tailwind", "Vercel"],
+      blurb: "Care-focused platform — design through launch and ongoing maintenance.",
+    },
+  ],
 }
 
 export const projects = [
   {
     name: "Binge Watch",
     url: "https://binge-watch.dampdigits.dev",
+    image: bingeThumb,
+    stack: ["Django", "DRF", "Docker", "React", "Vite"],
+    blurb: "Netflix-inspired PWA for discovery, playback, and continue-watching.",
     repos: [
-      {
-        label: "Backend",
-        href: "https://gitlab.com/dampdigits/binge-watch-backend",
-      },
-      {
-        label: "Frontend",
-        href: "https://gitlab.com/dampdigits/binge-watch-frontend",
-      },
-    ],
-    stack: [
-      "Django",
-      "DRF",
-      "Docker",
-      "React",
-      "JavaScript",
-      "Vite",
-      "Gunicorn",
-      "Render",
-      "Vercel",
-    ],
-    points: [
-      "Netflix-inspired PWA for movie/TV discovery, playback, and continue-watching.",
-      "Containerised Django REST backend with Docker/Gunicorn and a maintainable feature-oriented frontend.",
+      { label: "Backend", href: "https://gitlab.com/dampdigits/binge-watch-backend" },
+      { label: "Frontend", href: "https://gitlab.com/dampdigits/binge-watch-frontend" },
     ],
   },
   {
     name: "Whisp Media Processor",
     url: "https://github.com/dampdigits/whisp-media-processor",
+    image: null,
+    stack: ["Flask", "FFmpeg", "Whisper", "Cloudflare R2"],
+    blurb: "Async WebM→MP4 pipeline with soft subtitles and R2 chunk lifecycle.",
     repos: [
-      {
-        label: "Repository",
-        href: "https://github.com/dampdigits/whisp-media-processor",
-      },
-    ],
-    stack: ["Flask", "Python", "FFmpeg", "OpenAI Whisper", "Cloudflare R2", "boto3"],
-    points: [
-      "Async pipeline converting WebM to H.264 MP4 with synced audio and soft subtitles via Whisper.",
-      "Cloudflare R2 integration for chunk storage, lifecycle management, REST APIs, and error recovery.",
+      { label: "Repo", href: "https://github.com/dampdigits/whisp-media-processor" },
     ],
   },
   {
     name: "Event-Buddy",
     url: "https://github.com/orgs/EventBuddy-org/repositories",
+    image: null,
+    stack: ["Next.js", "Flask", "Telegram", "Cloudflare AI"],
+    blurb: "AI poster generation and Telegram organiser updates via Flask + Streamlit.",
     repos: [
-      {
-        label: "Repositories",
-        href: "https://github.com/orgs/EventBuddy-org/repositories",
-      },
-    ],
-    stack: [
-      "Next.js",
-      "Tailwind CSS",
-      "Flask",
-      "Streamlit",
-      "Telegram Bot API",
-      "Cloudflare AI",
-    ],
-    points: [
-      "Event platform that generates AI promotional posters.",
-      "Automated Telegram organiser updates through a Flask API and Streamlit bot interface.",
+      { label: "Repos", href: "https://github.com/orgs/EventBuddy-org/repositories" },
     ],
   },
   {
     name: "Stockplay",
     url: "https://github.com/dampdigits/stockplay",
-    repos: [
-      { label: "Repository", href: "https://github.com/dampdigits/stockplay" },
-    ],
-    stack: ["Flask", "Jinja", "SQLite", "Bootstrap", "Yahoo Finance API"],
-    points: [
-      "Stock-trading simulator with live market data.",
-      "Portfolio and performance tracking for risk-free trading analysis.",
-    ],
+    image: null,
+    stack: ["Flask", "SQLite", "Yahoo Finance"],
+    blurb: "Live-market stock trading simulator with portfolio tracking.",
+    repos: [{ label: "Repo", href: "https://github.com/dampdigits/stockplay" }],
+  },
+]
+
+export const testimonials = [
+  {
+    quote:
+      "Delivered beyond expectations with attention to even the smallest details — something that had been missing in my prior experiences.",
+    name: "Dr. Ayman Tailakh",
+    title: "Executive Director",
+    company: "Academic Nursing Partners",
+    initials: "AT",
+    avatar: ayman,
+  },
+  {
+    quote:
+      "Our vision was transformed into a complete digital ecosystem. Their seamless execution have empowered CareGrow to better serve & reach our community.",
+    name: "Mohammed Adil Hussain",
+    title: "Founder",
+    company: "CareGrow NGO",
+    initials: "MA",
+    avatar: mdadil,
+  },
+  {
+    quote:
+      "Curators Mark transformed our vision into a professional, user-friendly platform that reflects the compassion and quality of care we provide.",
+    name: "Pranay Chhibber",
+    title: "Operations Lead",
+    company: "AtomCare",
+    initials: "PC",
+    avatar: pranay,
+  },
+  {
+    quote:
+      "Not everybody dedicates themselves to someone else’s work even though they get paid, however Sameer's development service is upto date, smooth, and eye-catching. Just love the work he does, coz it’s splendid truly.",
+    name: "Sakia Jamal",
+    title: "Founder",
+    company: "Desi-Elegance",
+    initials: "SJ",
+    avatar: sakia,
+  },
+]
+
+export const education = [
+  {
+    title: "B.Tech CSE",
+    detail: "CGPA 8.11 · Brainware University",
+    period: "2022 – 26",
+  },
+  {
+    title: "ISC · ICSE",
+    detail: "93% · 93% · Young Horizons School",
+    period: "2021 · 2019",
   },
 ]
 
 export const achievements = [
   {
-    title: "Two-time Winner — Bluster DSA Tournament",
+    title: "Bluster DSA — Winner 2025",
     detail: "Texibition, Brainware University",
-    links: [
-      { label: "2025", href: "https://lnkd.in/p/dGJdUCmF" },
-      { label: "2024", href: "https://lnkd.in/p/d2dbaaUm" },
-    ],
+    image: bluster2025,
+    links: [{ label: "2025", href: "https://lnkd.in/p/dGJdUCmF" }],
   },
   {
-    title: "Winner — 48hr Hackathon",
-    detail: "Dev Innov8+ 2024, Brainware University",
+    title: "Bluster DSA — Winner 2024",
+    detail: "Texibition, Brainware University",
+    image: bluster2024,
+    links: [{ label: "2024", href: "https://lnkd.in/p/d2dbaaUm" }],
+  },
+  {
+    title: "48hr Hackathon — Winner",
+    detail: "Dev Innov8+ 2024",
+    image: devInnov8,
     links: [{ label: "Link", href: "https://lnkd.in/p/dyQDUeaZ" }],
   },
   {
-    title: "2nd Runner Up — Competitive Programming",
-    detail: "Yuktikala 2024, Nirdesh, RMVC College",
+    title: "Yuktikala CP — 2nd Runner Up",
+    detail: "Nirdesh, RMVC College 2024",
+    image: yuktikala,
     links: [{ label: "Link", href: "https://lnkd.in/p/dyQDUeaZ" }],
   },
   {
-    title: "District Award — Community Service",
-    detail: "Rotary Club of Calcutta Presidency, 2020",
+    title: "Rotary District Award",
+    detail: "Community Service, 2020",
+    image: codingStill,
     links: [],
   },
 ]
 
+export const organizations = [
+  {
+    name: "Tech Club, Brainware University",
+    role: "Core Member",
+    period: "2024 – 2026",
+    points: [
+      "Organized tech fests, hackathons, DSA sessions, and open-source collabs.",
+      "Conducted algorithm workshops and peer mentorship.",
+    ],
+  },
+  {
+    name: "GDSC, Brainware University",
+    role: "Outreach & Marketing Lead",
+    period: "Aug 2022 – Jul 2023",
+    points: [
+      "Scaled community to 800+ members; coordinated webinars and speakers.",
+      "Managed sponsorships and event engagement.",
+    ],
+  },
+  {
+    name: "YHS Interact Club (Rotary D3291)",
+    role: "President",
+    period: "2019 – 2021",
+    points: [
+      "Led donation drives, NGO partnerships, and COVID-awareness campaigns.",
+      "Coordinated fundraising and prosthetic limb fitting camps.",
+    ],
+  },
+  {
+    name: "Young Horizons School",
+    role: "Head Boy",
+    period: "2020 – 2021",
+    points: [
+      "Led student council and represented the school publicly.",
+      "Planned intra & inter-school events and competitions.",
+    ],
+  },
+]
+
+export const leetcode = [
+  { label: "Contest rating", value: "1578", note: "Global 2347 / 34958" },
+  { label: "Problems solved", value: "600+", note: "Beats 99.5%" },
+  { label: "Daily streak", value: "275", note: "Day challenge" },
+]
+
 export const navItems = [
-  { label: "About", href: "#about" },
+  { label: "Stack", href: "#skills" },
   { label: "Work", href: "#work" },
   { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
+  { label: "Proof", href: "#proof" },
   { label: "Contact", href: "#contact" },
 ]

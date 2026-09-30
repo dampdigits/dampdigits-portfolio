@@ -1,6 +1,6 @@
 # dampdigits portfolio
 
-Personal portfolio SPA for **SK Sameer Salam** — full stack developer & UI/UX designer.
+Dark, Linux-vibe SPA portfolio for **SK Sameer Salam** — full stack developer & UI/UX designer.
 
 ## Stack
 
@@ -14,7 +14,6 @@ Personal portfolio SPA for **SK Sameer Salam** — full stack developer & UI/UX 
 npm install
 npm run dev
 npm run build
-npm run preview
 ```
 
-Contact CTA uses `mailto:sksameersalam@gmail.com`.
+Contact CTA: `mailto:sksameersalam@gmail.com`

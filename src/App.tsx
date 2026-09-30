@@ -1,11 +1,11 @@
-import { About } from "./components/About"
+import { Background } from "./components/Background"
 import { Contact } from "./components/Contact"
-import { Education } from "./components/Education"
 import { Footer } from "./components/Footer"
 import { Hero } from "./components/Hero"
 import { Nav } from "./components/Nav"
 import { Projects } from "./components/Projects"
 import { Skills } from "./components/Skills"
+import { Testimonials } from "./components/Testimonials"
 import { Work } from "./components/Work"
 
 export default function App() {
@@ -14,12 +14,12 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <About />
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <Skills />
           <Work />
           <Projects />
-          <Skills />
-          <Education />
+          <Testimonials />
+          <Background />
           <Contact />
         </div>
       </main>

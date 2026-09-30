@@ -1,34 +1,32 @@
 import { motion } from "framer-motion"
-import { profile } from "../data/profile"
-import { HeroArt } from "./HeroArt"
+import faceAscii from "../assets/sameer/face-ascii-art.webp"
+import { highlights, profile } from "../data/profile"
 
 const ease = [0.22, 1, 0.36, 1] as const
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 18 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.12 * i, duration: 0.55, ease },
+    transition: { delay: 0.08 * i, duration: 0.5, ease },
   }),
 }
 
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="grid-bg relative flex min-h-[100svh] items-center overflow-hidden pt-20 pb-16"
-    >
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-5 md:grid-cols-[1.05fr_0.95fr] md:gap-8 md:px-8 lg:gap-14">
+    <section id="top" className="grid-bg relative overflow-hidden pt-20 pb-10 md:pt-24 md:pb-14">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 sm:px-6 md:grid-cols-[1.15fr_0.85fr] md:gap-10">
         <div>
           <motion.p
             custom={0}
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="mb-5 font-mono text-xs tracking-[0.22em] text-accent uppercase"
+            className="mb-3 font-mono text-[11px] tracking-widest text-accent uppercase"
           >
-            {profile.location} · Available for hire
+            <span className="text-accent-dim">~/</span>
+            {profile.location} · available for hire
           </motion.p>
 
           <motion.h1
@@ -36,7 +34,7 @@ export function Hero() {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="font-display text-5xl leading-[0.95] font-extrabold tracking-tight text-ink sm:text-6xl lg:text-7xl"
+            className="font-display text-[2.75rem] leading-[0.92] font-extrabold tracking-tight text-white sm:text-6xl md:text-6xl lg:text-7xl"
           >
             {profile.brand}
           </motion.h1>
@@ -46,9 +44,9 @@ export function Hero() {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="mt-3 font-display text-xl font-semibold text-ink-soft md:text-2xl"
+            className="mt-2 font-mono text-sm text-soft md:text-base"
           >
-            {profile.name}
+            {profile.name} · {profile.title}
           </motion.p>
 
           <motion.p
@@ -56,7 +54,7 @@ export function Hero() {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="mt-5 max-w-lg text-base leading-relaxed text-muted md:text-lg"
+            className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted md:text-base"
           >
             {profile.tagline}
           </motion.p>
@@ -66,20 +64,19 @@ export function Hero() {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="mt-8 flex flex-wrap items-center gap-3"
+            className="mt-6 flex flex-wrap gap-2.5"
           >
             <a
               href={profile.emailHref}
-              className="inline-flex items-center gap-2 bg-ink px-6 py-3.5 font-mono text-xs tracking-wide text-surface uppercase transition-colors hover:bg-accent hover:text-ink"
+              className="inline-flex items-center gap-2 bg-accent px-5 py-3 font-mono text-[11px] font-medium tracking-wide text-void uppercase transition-colors hover:bg-white"
             >
-              Contact me
-              <span aria-hidden>→</span>
+              Contact me →
             </a>
             <a
               href="#work"
-              className="inline-flex items-center gap-2 border border-line bg-transparent px-6 py-3.5 font-mono text-xs tracking-wide text-ink uppercase transition-colors hover:border-ink"
+              className="inline-flex items-center gap-2 border border-line px-5 py-3 font-mono text-[11px] tracking-wide text-soft uppercase transition-colors hover:border-accent hover:text-accent"
             >
-              View work
+              See work
             </a>
           </motion.div>
 
@@ -88,7 +85,7 @@ export function Hero() {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="mt-10 flex flex-wrap gap-x-5 gap-y-2"
+            className="mt-6 flex flex-wrap gap-x-4 gap-y-1"
           >
             {profile.links.map((link) => (
               <li key={link.href}>
@@ -96,22 +93,64 @@ export function Hero() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-xs text-muted underline-offset-4 transition-colors hover:text-accent-deep hover:underline"
+                  className="font-mono text-[11px] text-muted transition-colors hover:text-accent"
                 >
                   {link.label}
                 </a>
               </li>
             ))}
           </motion.ul>
+
+          <motion.dl
+            custom={6}
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            className="mt-8 grid grid-cols-2 gap-px overflow-hidden border border-line bg-line sm:grid-cols-4"
+          >
+            {highlights.map((h) => (
+              <div key={h.label} className="bg-panel px-3 py-3 sm:px-4">
+                <dt className="font-mono text-[10px] tracking-wider text-muted uppercase">
+                  {h.label}
+                </dt>
+                <dd className="mt-0.5 font-display text-lg font-bold text-accent">{h.value}</dd>
+              </div>
+            ))}
+          </motion.dl>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
+          initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.25, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="relative"
+          transition={{ delay: 0.2, duration: 0.6, ease }}
+          className="relative mx-auto w-full max-w-xs sm:max-w-sm md:max-w-none"
         >
-          <HeroArt />
+          <div className="relative overflow-hidden border border-line bg-panel">
+            <div className="flex items-center gap-1.5 border-b border-line px-3 py-2">
+              <span className="h-2 w-2 rounded-full bg-line" />
+              <span className="h-2 w-2 rounded-full bg-line" />
+              <span className="h-2 w-2 rounded-full bg-accent/70" />
+              <span className="ml-2 font-mono text-[10px] text-muted">whoami.png</span>
+            </div>
+            <div className="relative aspect-[4/5] scanlines">
+              <img
+                src={faceAscii}
+                alt={`${profile.name} — ASCII portrait`}
+                className="h-full w-full object-cover object-top opacity-90"
+                style={{ filter: "hue-rotate(95deg) saturate(0.85) brightness(0.95)" }}
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void via-transparent to-transparent opacity-70" />
+            </div>
+            <p className="border-t border-line px-3 py-2 font-mono text-[10px] text-muted">
+              <span className="text-accent">guest@dampdigits</span>:~$ cat status → hireable
+            </p>
+          </div>
+          <motion.div
+            className="absolute -right-2 -bottom-2 hidden h-14 w-14 border border-accent/40 bg-accent-soft sm:block"
+            animate={{ y: [0, -6, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            aria-hidden
+          />
         </motion.div>
       </div>
     </section>

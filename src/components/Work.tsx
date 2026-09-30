@@ -4,86 +4,63 @@ import { Section } from "./Section"
 
 export function Work() {
   return (
-    <Section id="work" eyebrow="02 / Experience" title="Freelance & client work">
+    <Section id="work" prompt="cat ~/experience.log" title="Client work">
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
+        initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.45 }}
-        className="mb-12 border-l-2 border-accent pl-5"
+        className="mb-6 border border-line bg-panel px-4 py-3 sm:px-5"
       >
-        <h3 className="font-display text-xl font-bold text-ink md:text-2xl">
+        <p className="font-display text-base font-bold text-white md:text-lg">
           {experience.role}
-        </h3>
-        <p className="mt-1 text-muted">
-          {experience.type} · {experience.company}
         </p>
-        <p className="mt-1 font-mono text-xs text-muted">
-          {experience.location} · {experience.period}
+        <p className="mt-0.5 font-mono text-[11px] text-muted">
+          {experience.type} · {experience.company} · {experience.period}
         </p>
       </motion.div>
 
-      <div className="space-y-0 divide-y divide-line border-y border-line">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {experience.clients.map((client, index) => (
-          <motion.article
+          <motion.a
             key={client.name}
-            initial={{ opacity: 0, y: 20 }}
+            href={client.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.45, delay: index * 0.05 }}
-            className="grid gap-6 py-8 md:grid-cols-[minmax(0,220px)_1fr] md:gap-10"
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.4, delay: index * 0.04 }}
+            className="group flex flex-col overflow-hidden border border-line bg-panel transition-colors hover:border-accent/40"
           >
-            <div>
-              <h4 className="font-display text-lg font-bold text-ink">
-                {client.url ? (
-                  <a
-                    href={client.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transition-colors hover:text-accent-deep"
-                  >
-                    {client.name}
-                  </a>
-                ) : (
-                  client.name
-                )}
-              </h4>
-              {"urls" in client && client.urls && (
-                <ul className="mt-3 space-y-1">
-                  {client.urls.map((u) => (
-                    <li key={u.href}>
-                      <a
-                        href={u.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-mono text-xs text-muted hover:text-accent-deep"
-                      >
-                        {u.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              )}
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {client.stack.slice(0, 6).map((tech) => (
+            <div className="relative aspect-[16/10] overflow-hidden bg-ink">
+              <img
+                src={client.image}
+                alt={`${client.name} preview`}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                loading="lazy"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-panel via-transparent to-transparent opacity-80" />
+            </div>
+            <div className="flex flex-1 flex-col p-3.5 sm:p-4">
+              <div className="flex items-center justify-between gap-2">
+                <h3 className="font-display text-base font-bold text-white">{client.name}</h3>
+                <span className="font-mono text-xs text-accent opacity-70 transition-opacity group-hover:opacity-100">
+                  ↗
+                </span>
+              </div>
+              <p className="mt-1.5 flex-1 text-[13px] leading-snug text-muted">{client.blurb}</p>
+              <div className="mt-3 flex flex-wrap gap-1">
+                {client.stack.slice(0, 4).map((t) => (
                   <span
-                    key={tech}
-                    className="border border-line px-2 py-0.5 font-mono text-[10px] tracking-wide text-muted uppercase"
+                    key={t}
+                    className="font-mono text-[9px] tracking-wide text-accent-dim uppercase"
                   >
-                    {tech}
+                    {t}
                   </span>
                 ))}
               </div>
             </div>
-            <ul className="space-y-3">
-              {client.points.map((point) => (
-                <li key={point} className="flex gap-3 leading-relaxed text-ink-soft">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-warm" aria-hidden />
-                  {point}
-                </li>
-              ))}
-            </ul>
-          </motion.article>
+          </motion.a>
         ))}
       </div>
     </Section>

@@ -3,40 +3,37 @@ import { skills } from "../data/profile"
 import { Section } from "./Section"
 
 const groups = [
-  { label: "Languages", items: skills.languages },
-  { label: "Frameworks", items: skills.frameworks },
-  { label: "Databases", items: skills.databases },
-  { label: "Patterns", items: skills.patterns },
-  { label: "Tools", items: skills.tools },
+  { label: "languages", items: skills.languages },
+  { label: "frameworks", items: skills.frameworks },
+  { label: "databases", items: skills.databases },
+  { label: "patterns", items: skills.patterns },
+  { label: "tools", items: skills.tools },
 ]
 
 export function Skills() {
   return (
-    <Section id="skills" eyebrow="04 / Skills" title="Technical stack">
-      <div className="space-y-8">
+    <Section id="skills" prompt="ls ~/stack" title="Tech stack">
+      <div className="space-y-5">
         {groups.map((group, gi) => (
           <motion.div
             key={group.label}
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.4, delay: gi * 0.04 }}
+            transition={{ duration: 0.35, delay: gi * 0.04 }}
+            className="flex flex-col gap-2 sm:flex-row sm:items-start sm:gap-4"
           >
-            <h3 className="mb-3 font-mono text-xs tracking-[0.18em] text-muted uppercase">
+            <p className="w-24 shrink-0 pt-1 font-mono text-[10px] tracking-wider text-accent-dim uppercase">
               {group.label}
-            </h3>
-            <ul className="flex flex-wrap gap-2">
-              {group.items.map((item, ii) => (
-                <motion.li
+            </p>
+            <ul className="flex flex-wrap gap-1.5">
+              {group.items.map((item) => (
+                <li
                   key={item}
-                  initial={{ opacity: 0, scale: 0.96 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: ii * 0.02 }}
-                  className="border border-line bg-paper px-3 py-1.5 font-mono text-xs text-ink-soft transition-colors hover:border-accent hover:text-ink"
+                  className="border border-line bg-panel px-2.5 py-1 font-mono text-[11px] text-soft transition-colors hover:border-accent/50 hover:text-accent"
                 >
                   {item}
-                </motion.li>
+                </li>
               ))}
             </ul>
           </motion.div>
