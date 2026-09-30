@@ -1,6 +1,6 @@
 # dampdigits portfolio
 
-Dark, Linux-vibe SPA portfolio for **SK Sameer Salam** — full stack developer & UI/UX designer.
+Dark, Linux-vibe SPA portfolio for **Sk Sameer Salam** — full stack developer & UI/UX designer.
 
 ## Stack
 

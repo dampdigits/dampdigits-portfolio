@@ -47,6 +47,14 @@ export function Nav() {
             </a>
           ))}
           <a
+            href={profile.resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-[11px] tracking-wide text-muted uppercase transition-colors hover:text-accent"
+          >
+            Resume
+          </a>
+          <a
             href={profile.emailHref}
             className="bg-accent px-3.5 py-2 font-mono text-[11px] font-medium tracking-wide text-void uppercase transition-colors hover:bg-white"
           >
@@ -93,6 +101,15 @@ export function Nav() {
                   {item.label}
                 </a>
               ))}
+              <a
+                href={profile.resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 font-mono text-sm text-muted uppercase"
+                onClick={() => setOpen(false)}
+              >
+                Resume
+              </a>
               <a
                 href={profile.emailHref}
                 className="mt-2 inline-flex w-fit bg-accent px-4 py-2.5 font-mono text-[11px] text-void uppercase"

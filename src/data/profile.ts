@@ -5,6 +5,10 @@ import anpThumb from "../assets/projects/anp-thumbnail.webp"
 import curatorsThumb from "../assets/projects/curators-mark.webp"
 import atomcareThumb from "../assets/projects/atomcare-thumbnail.webp"
 import bingeThumb from "../assets/projects/binge-watch.webp"
+import whispThumb from "../assets/projects/whisp.webp"
+import eventBuddyThumb from "../assets/projects/event-buddy.webp"
+import stockplayThumb from "../assets/projects/stock-play.webp"
+import resumePdf from "../assets/sksameersalam-resume.pdf"
 
 import ayman from "../assets/clients/ayman-tailakh.webp"
 import mdadil from "../assets/clients/mdadil.webp"
@@ -13,22 +17,23 @@ import sakia from "../assets/clients/sakia-jamal.webp"
 
 import bluster2025 from "../assets/achievements/bluster2025.jpeg"
 import bluster2024 from "../assets/achievements/bluster2024.webp"
-import codingStill from "../assets/achievements/coding-still-pic.webp"
+import samPic1 from "../assets/sameer/sam-pic1.webp"
 import devInnov8 from "../assets/achievements/dev-innov8.jpeg"
 import yuktikala from "../assets/achievements/yuktikala2024.webp"
 
 export const profile = {
-  name: "SK Sameer Salam",
+  name: "Sk Sameer Salam",
   brand: "dampdigits",
-  title: "Full Stack Developer · UI/UX Designer",
+  title: "Full Stack Developer",
   location: "Kolkata, India",
   phone: "+91 82729 27693",
   phoneHref: "tel:+918272927693",
   email: "sksameersalam@gmail.com",
   emailHref: "mailto:sksameersalam@gmail.com",
   website: "https://dampdigits.dev/",
+  resume: resumePdf,
   tagline:
-    "I ship production web products for businesses — CRMs, PWAs, storefronts, and analytics — end to end.",
+    "I ship production web products for businesses — CRMs, ERPs, CMSs, PWAs, storefronts, & analytics — end to end.",
   summary:
     "Freelance software engineer & UI/UX designer. Blend of clean engineering, purposeful design, and competitive-programming rigor.",
   links: [
@@ -139,7 +144,7 @@ export const projects = [
   {
     name: "Whisp Media Processor",
     url: "https://github.com/dampdigits/whisp-media-processor",
-    image: null,
+    image: whispThumb,
     stack: ["Flask", "FFmpeg", "Whisper", "Cloudflare R2"],
     blurb: "Async WebM→MP4 pipeline with soft subtitles and R2 chunk lifecycle.",
     repos: [
@@ -149,7 +154,8 @@ export const projects = [
   {
     name: "Event-Buddy",
     url: "https://github.com/orgs/EventBuddy-org/repositories",
-    image: null,
+    image: eventBuddyThumb,
+    // imageFit: "contain" as const,
     stack: ["Next.js", "Flask", "Telegram", "Cloudflare AI"],
     blurb: "AI poster generation and Telegram organiser updates via Flask + Streamlit.",
     repos: [
@@ -159,7 +165,7 @@ export const projects = [
   {
     name: "Stockplay",
     url: "https://github.com/dampdigits/stockplay",
-    image: null,
+    image: stockplayThumb,
     stack: ["Flask", "SQLite", "Yahoo Finance"],
     blurb: "Live-market stock trading simulator with portfolio tracking.",
     repos: [{ label: "Repo", href: "https://github.com/dampdigits/stockplay" }],
@@ -178,7 +184,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Our vision was transformed into a complete digital ecosystem. Their seamless execution have empowered CareGrow to better serve & reach our community.",
+      "Our vision was transformed into a complete digital ecosystem... seamless execution have empowered CareGrow to better serve & reach our community.",
     name: "Mohammed Adil Hussain",
     title: "Founder",
     company: "CareGrow NGO",
@@ -187,7 +193,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Curators Mark transformed our vision into a professional, user-friendly platform that reflects the compassion and quality of care we provide.",
+      "Transformed our vision into a professional, user-friendly platform that reflects the compassion and quality of care we provide.",
     name: "Pranay Chhibber",
     title: "Operations Lead",
     company: "AtomCare",
@@ -246,7 +252,7 @@ export const achievements = [
   {
     title: "Rotary District Award",
     detail: "Community Service, 2020",
-    image: codingStill,
+    image: samPic1,
     links: [],
   },
 ]

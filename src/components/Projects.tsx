@@ -16,14 +16,22 @@ export function Projects() {
             className="group flex overflow-hidden border border-line bg-panel transition-colors hover:border-accent/40"
           >
             {project.image ? (
-              <div className="relative hidden w-28 shrink-0 overflow-hidden sm:block md:w-36">
+              <div
+                className={`relative hidden w-28 shrink-0 overflow-hidden sm:block md:w-36 ${
+                  project.imageFit === "contain" ? "bg-white" : "bg-ink"
+                }`}
+              >
                 <img
                   src={project.image}
                   alt=""
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${
+                    project.imageFit === "contain" ? "object-contain p-3" : "object-cover"
+                  }`}
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-void/30" />
+                {project.imageFit === "contain" ? null : (
+                  <div className="absolute inset-0 bg-void/30" />
+                )}
               </div>
             ) : (
               <div className="hidden w-28 shrink-0 items-center justify-center border-r border-line bg-panel-2 font-mono text-[10px] text-accent-dim sm:flex md:w-36">
