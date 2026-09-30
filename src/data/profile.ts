@@ -65,12 +65,10 @@ export const skills = {
     "JWT",
     "Vite",
     "GNU/Linux",
-    "SQLAlchemy",
     "Postman",
     "Figma",
     "Prisma",
-    "Stripe",
-    "Sanity",
+    "SQLAlchemy"
   ],
 }
 
