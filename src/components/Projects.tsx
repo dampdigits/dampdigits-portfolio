@@ -17,21 +17,17 @@ export function Projects() {
           >
             {project.image ? (
               <div
-                className={`relative hidden w-28 shrink-0 overflow-hidden sm:block md:w-36 ${
-                  project.imageFit === "contain" ? "bg-white" : "bg-ink"
+                className={`relative hidden w-28 shrink-0 overflow-hidden sm:block md:w-36 bg-ink"
                 }`}
               >
                 <img
                   src={project.image}
                   alt=""
-                  className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${
-                    project.imageFit === "contain" ? "object-contain p-3" : "object-cover"
+                  className={`h-full w-full transition-transform duration-500 group-hover:scale-105 object-cover"
                   }`}
                   loading="lazy"
                 />
-                {project.imageFit === "contain" ? null : (
-                  <div className="absolute inset-0 bg-void/30" />
-                )}
+                <div className="absolute inset-0 bg-void/30" />
               </div>
             ) : (
               <div className="hidden w-28 shrink-0 items-center justify-center border-r border-line bg-panel-2 font-mono text-[10px] text-accent-dim sm:flex md:w-36">
