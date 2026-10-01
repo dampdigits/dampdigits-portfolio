@@ -75,7 +75,7 @@ export const skills = {
 export const experience = {
   role: "Software Engineer & UI/UX Designer",
   type: "Freelance",
-  company: "Curators Mark — Freessentia Pvt. Ltd.",
+  company: "Curators Mark — Freessentia Ventures Pvt. Ltd.",
   location: "Kolkata, India",
   period: "Dec 2024 – Present",
   clients: [
