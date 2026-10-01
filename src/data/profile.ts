@@ -227,13 +227,13 @@ export const achievements = [
     title: "Bluster DSA — Winner 2025",
     detail: "Texibition, Brainware University",
     image: bluster2025,
-    links: [{ label: "2025", href: "https://lnkd.in/p/dGJdUCmF" }],
+    links: [{ label: "Link", href: "https://lnkd.in/p/dGJdUCmF" }],
   },
   {
     title: "Bluster DSA — Winner 2024",
     detail: "Texibition, Brainware University",
     image: bluster2024,
-    links: [{ label: "2024", href: "https://lnkd.in/p/d2dbaaUm" }],
+    links: [{ label: "Link", href: "https://lnkd.in/p/d2dbaaUm" }],
   },
   {
     title: "48hr Hackathon — Winner",

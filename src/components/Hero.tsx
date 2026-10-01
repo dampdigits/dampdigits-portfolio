@@ -1,6 +1,8 @@
 import { motion } from "framer-motion"
 import faceAscii from "../assets/sameer/face-ascii-art.webp"
-import { highlights, profile } from "../data/profile"
+import { profile, skills } from "../data/profile"
+
+const techStack = Array.from(new Set(Object.values(skills).flat()))
 
 const ease = [0.22, 1, 0.36, 1] as const
 
@@ -109,24 +111,27 @@ export function Hero() {
             ))}
           </motion.ul>
 
-          <motion.dl
+          <motion.div
             custom={6}
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="mt-6 grid grid-cols-2 gap-px overflow-hidden border border-line bg-line sm:mt-8 sm:grid-cols-4"
+            className="mt-6 sm:mt-8"
           >
-            {highlights.map((h) => (
-              <div key={h.label} className="bg-panel px-2.5 py-2.5 sm:px-4 sm:py-3">
-                <dt className="font-mono text-[9px] tracking-wider text-muted uppercase sm:text-[10px]">
-                  {h.label}
-                </dt>
-                <dd className="mt-0.5 font-display text-base font-bold text-accent sm:text-lg">
-                  {h.value}
-                </dd>
-              </div>
-            ))}
-          </motion.dl>
+            <p className="mb-2 font-mono text-[10px] tracking-[0.2em] text-muted uppercase sm:text-[11px]">
+              Tech stack
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {techStack.map((item) => (
+                <span
+                  key={item}
+                  className="border border-line bg-panel px-2.5 py-1.5 font-mono text-[10px] text-soft transition-colors hover:border-accent hover:text-accent sm:text-[11px]"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </motion.div>
         </div>
 
         <motion.div

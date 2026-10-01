@@ -13,24 +13,22 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-30px" }}
             transition={{ duration: 0.4, delay: index * 0.05 }}
-            className="group flex overflow-hidden border border-line bg-panel transition-colors hover:border-accent/40"
+            className="group flex flex-col overflow-hidden border border-line bg-panel transition-colors hover:border-accent/40 sm:flex-row"
           >
             {project.image ? (
               <div
-                className={`relative hidden w-28 shrink-0 overflow-hidden sm:block md:w-36 bg-ink"
-                }`}
+                className="relative h-40 shrink-0 overflow-hidden bg-ink sm:h-auto sm:w-28 md:w-36"
               >
                 <img
                   src={project.image}
                   alt=""
-                  className={`h-full w-full transition-transform duration-500 group-hover:scale-105 object-cover"
-                  }`}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-void/30" />
               </div>
             ) : (
-              <div className="hidden w-28 shrink-0 items-center justify-center border-r border-line bg-panel-2 font-mono text-[10px] text-accent-dim sm:flex md:w-36">
+              <div className="flex h-40 shrink-0 items-center justify-center border-b border-line bg-panel-2 font-mono text-[10px] text-accent-dim sm:h-auto sm:w-28 sm:border-b-0 sm:border-r md:w-36">
                 {"</>"}
               </div>
             )}

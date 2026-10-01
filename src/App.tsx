@@ -4,7 +4,7 @@ import { Footer } from "./components/Footer"
 import { Hero } from "./components/Hero"
 import { Nav } from "./components/Nav"
 import { Projects } from "./components/Projects"
-import { Skills } from "./components/Skills"
+// import { Skills } from "./components/Skills"
 import { Testimonials } from "./components/Testimonials"
 import { Work } from "./components/Work"
 
@@ -15,7 +15,7 @@ export default function App() {
       <main>
         <Hero />
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <Skills />
+          {/* <Skills /> */}
           <Work />
           <Projects />
           <Testimonials />
