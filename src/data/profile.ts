@@ -213,7 +213,7 @@ export const education = [
   {
     title: "B.Tech CSE",
     detail: "CGPA 8.11 · Brainware University",
-    period: "2022 – 26",
+    period: "2022 – 2026",
   },
   {
     title: "ISC · ICSE",
