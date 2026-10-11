@@ -301,7 +301,7 @@ export const leetcode = [
 ]
 
 export const navItems = [
-  { label: "Stack", href: "#skills" },
+  // { label: "Stack", href: "#skills" },
   { label: "Work", href: "#work" },
   { label: "Projects", href: "#projects" },
   { label: "Proof", href: "#proof" },
