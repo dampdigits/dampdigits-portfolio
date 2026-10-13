@@ -35,7 +35,7 @@ export const profile = {
   tagline:
     "I ship production web products for businesses — CRMs, ERPs, CMSs, PWAs, storefronts, & analytics — end to end.",
   summary:
-    "Freelance software engineer & UI/UX designer. Blend of clean engineering, purposeful design, and competitive-programming rigor.",
+    "Full-Stack Software Engineer. Blend of clean engineering, purposeful design, & competitive programmer.",
   links: [
     { label: "GitHub", href: "https://github.com/dampdigits" },
     { label: "GitLab", href: "https://gitlab.com/dampdigits" },
@@ -73,7 +73,7 @@ export const skills = {
 }
 
 export const experience = {
-  role: "Software Engineer & UI/UX Designer",
+  role: "Software Engineer",
   type: "Freelance",
   company: "Curators Mark — Freessentia Ventures Pvt. Ltd.",
   location: "Kolkata, India",
