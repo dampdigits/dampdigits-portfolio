@@ -77,7 +77,7 @@ export const experience = {
   type: "Freelance",
   company: "Curators Mark — Freessentia Ventures Pvt. Ltd.",
   location: "Kolkata, India",
-  period: "Dec 2024 – Present",
+  period: "Aug 2025 – Present",
   clients: [
     {
       name: "Ad-Aqua",
