@@ -97,7 +97,7 @@ export const experience = {
     },
     {
       name: "Desi Elegance",
-      url: "https://www.desielegance.in",
+      url: "https://www.desielegance.vercel.app",
       image: desiThumb,
       stack: ["Next.js", "TypeScript", "Figma", "Vercel"],
       blurb:
